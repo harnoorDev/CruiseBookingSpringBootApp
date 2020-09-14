@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="ISO-8859-1">
+   <link rel="stylesheet" type="text/css" href="../main.css">
+<title>Insert title here</title>
+       
+</head>
+<body>
+    <div class="bg-image"></div>
+    
+    <div class="bg-text">
+  <h1> CUSTOMER ROOM BOOKING  </h1>
+
+<form name="form" action="#" th:action="@{/user/bookRoom}" method="post"
+		th:object="${room}" >
+	
+		<br> <br>
+		<div class="row">
+			<input type="hidden" name="id" th:field="*{id}" th:value="*{id}" />
+		
+			
+			<div>
+				<label> Select Room Type :  </label><br> 
+				
+	<select  style="border-radius: 10px; "th:field="*{{roomType}}">
+         <option th:each="roomType : ${T(com.prog39599.beans.RoomType).values()}"
+                    th:value="${{roomType}}"
+                    th:selected="${roomType == T(com.prog39599.beans.RoomType)}"
+                    th:text="${roomType}">
+        </option>
+    </select> 	
+			</div>
+			<br>
+            
+			<div>
+				<label> Rooms Remaining </label><br> 
+				 <label>Deluxe</label> <p th:text="${DeluxeRoomsLeft}"> </p>
+		
+				 <br>
+				 
+				 	 <label>Luxury</label> <p th:text="${LuxuryRoomsLeft}"> </p>
+				 	
+				 	 <br>
+				 	 
+				 	 	 <label>Economy</label> <p th:text="${EconomyRoomsLeft}"> </p>
+				 	 	
+				
+				
+			</div>
+			<br>
+			<h3> Senior Citizens and Families with children gets 50%  Discount on every room !</h3>
+			<br>
+			<div>
+			Are you Senior ?<input 
+      type="checkbox" 
+      name="isSenior" />
+			
+			<br>
+                <br>
+                
+                <br>
+            
+				Are you with Children ?<input 
+      type="checkbox" 
+      name="isWithChildren" />
+			</div>
+            <br>
+            <br>
+            
+			<div>
+				<input type="submit" value="Book" class="button"  />
+			</div>
+		</div>
+	</form>
+
+
+
+<p> <a href="/" th:href="@{/}"> Back to Home Page</a></p>
+<p> <a href="#" th:href="@{/logout}"> Logout</a></p>
+        </div>
+</body>
+</html>

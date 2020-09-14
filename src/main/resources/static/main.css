@@ -1,0 +1,100 @@
+@charset "utf-8";
+/* CSS Document */
+
+h1
+{
+    font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+     text-align: center;
+    color: white;
+    font-size: 2em;
+    font-weight: 4000;
+    
+    
+}
+
+h2
+{
+    font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+    text-align: center;
+    font-size: 1.2em;
+    color:white;
+}
+
+
+div
+{
+
+    
+    text-align: center;
+    font-family:Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+    font-size: 1.1em;
+    color : white;
+}
+
+label
+{
+    font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+    font-size: 1.2em;
+  
+    
+}
+
+a
+{
+	color : skyblue;
+	
+}
+
+input
+{
+    
+    border-radius: 15px;
+    width: 180px;
+    height: 25px;
+    
+    
+}
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-image {
+  /* The image used */
+  background-image: url("images/cruise.jpg");
+  
+  /* Add the blur effect */
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  
+  /* Full height */
+  height: 100%; 
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Position text in the middle of the page/image */
+.bg-text {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+}
+

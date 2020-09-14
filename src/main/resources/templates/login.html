@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+        <link rel="stylesheet" type="text/css" href="main.css">
+  
+</head>
+<body >
+          <div class="bg-image"></div>
+    
+    <div class="bg-text">
+    <h1>Welcome to the Login Page</h1>
+
+
+<form method="post" th:action="@{/login}">
+
+
+<div th:if="${param.error}">
+<div style="color:red;">
+Invalid user name or password
+</div>
+
+</div>
+
+
+<div th:if="${param.logout}">
+<div style="color:red;">
+You have been logged out. 
+</div>
+
+</div>
+
+<br>
+    
+<div>
+
+<label for="username">User Name</label>
+<input type ="text" id="username" name="username" autofocus="autofocus" placeholder="UserName" required>
+</div>
+
+<br>
+    <br>
+<div>
+
+<label for="password">Password</label>
+<input type ="password" id="password" name="password"  placeholder="password" required>
+</div>
+
+    <br>
+    <br>
+
+<div>
+
+
+<input type ="submit" id="Login-submit" name="Login-submit"  value="Log-In">
+</div>
+
+
+</form>
+
+
+<p style="text-align: center; font-family: 'Gill Sans', 'Gill Sans MT', 'Myriad Pro', 'DejaVu Sans Condensed', Helvetica, Arial, 'sans-serif'; color:indigo;"> <a href="/" th:href="@{/}"> Back to Home Page</a>
+    </div>
+</body>
+</html>

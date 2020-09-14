@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+      <link rel="stylesheet" type="text/css" href="../main.css">
+<meta charset="ISO-8859-1">
+<title>Admin</title>
+</head>
+<body>
+      <div class="bg-image"></div>
+    
+    <div class="bg-text">
+<h1> ADMIN PAGE </h1>
+
+	<div>
+		<h3>Customers</h3>
+		<table border="10px" cellpadding="10px" align="center">
+			<tr>
+				<th>Customer ID</th>
+				<th>Username</th>
+				<th>Enabled</th>
+				<th>Is Senior?</th>
+				<th>Is with Children?</th>
+				<th>Action</th>
+			</tr>
+			<tr th:each="u : ${customerList}">
+				<td th:text="${u.id}">ID</td>
+				<td th:text="${u.username}">UserName</td>
+				<td th:text="${u.enabled}">Enabled</td>
+				<td th:text="${u.isSenior}">isSenior</td>
+				<td th:text="${u.isWithChildren}">isWithChildren</td>
+				<td><a href="" th:href="@{'editUser/'+${u.id}}"><button class="button">Edit</button></a> 
+				<a  th:href="@{'deleteUser/'+${u.id}}"><button class="button">Delete</button></a></td>
+			</tr>
+		</table>
+		
+
+		<h3> Re Assign Rooms </h3>
+		<table border="10px" cellpadding="10px" align="center">
+			<tr>
+				<th>Room ID</th>
+				<th>Customer ID</th>
+				<th>Username </th>
+				<th>Room Type</th>
+				<th>Price</th>
+				<th>Action</th>
+			</tr>
+			<tr th:each="r : ${roomList}">
+				<td th:text="${r.id}">ID</td>
+				<td th:text="${r.customer.id}">Customer ID</td>
+				<td th:text="${r.customer.username}">Customer Name</td>
+				<td th:text="${r.roomType}">RoomType</td>
+				<td th:text="'$'+${r.price}">Price</td>
+				<td><a href="" th:href="@{'editRoom/'+${r.id}}"><button class="button">SELECT</button></a> </td>
+			</tr>
+		</table>
+	 
+	</div>
+</body>
+</html>

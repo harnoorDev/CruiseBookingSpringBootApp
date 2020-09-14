@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+    
+<head>
+      <link rel="stylesheet" type="text/css" href="../main.css">
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+      <div class="bg-image"></div>
+    
+    <div class="bg-text">
+<h1> ROOM INFO </h1>
+	<form  method ="post" th:action="@{/modifyRoom}" th:object="${room}">
+			
+			<input type="hidden" th:field="*{id}" th:value="*{id}"/>
+			
+			
+				<label> Select Room Type :  </label><br> 
+				
+	<select  style="border-radius: 10px; "th:field="*{{roomType}}">
+         <option th:each="roomType : ${T(com.prog39599.beans.RoomType).values()}"
+                    th:value="${{roomType}}"
+                    th:selected="${roomType == T(com.prog39599.beans.RoomType)}"
+                    th:text="${roomType}">
+        </option>
+    </select> 	
+			
+ 		
+			<p> Assigned to Customer ID : <input type="number" th:field="*{customer.id}" th:value="*{customer.id}"/></p> 
+			
+			<p> Price : <input type="number" th:field="*{price}" th:value="*{price}"/></p> 
+			
+			<input type="submit" value="Save Changes"  class="button" />
+		</form>
+</body>
+</html>

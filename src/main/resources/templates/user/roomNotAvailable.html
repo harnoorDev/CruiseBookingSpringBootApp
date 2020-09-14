@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+      <link rel="stylesheet" type="text/css" href="../main.css">
+<head>
+<meta charset="ISO-8859-1">
+<title>Error</title>
+</head>
+<body>
+     <div class="bg-image"></div>
+    
+    <div class="bg-text">
+<h1> The Selected room type is not available !</h1>
+<h2 th:text ="${roomtype}"></h2>
+<h3><a th:href="@{/user}">Return </a>to room selection</h3>
+<p> <a href="#" th:href="@{/logout}"> Logout</a></p>
+    </div>
+</body>
+</html>

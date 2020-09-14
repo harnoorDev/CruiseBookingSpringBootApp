@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org"
+      
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+    
+<head>
+      <link rel="stylesheet" type="text/css" href="../main.css">
+<meta charset="ISO-8859-1">
+<title>Congrats  [[${name}]]</title>
+</head>
+<body>
+       <div class="bg-image"></div>
+    
+    <div class="bg-text">
+<h1> Hi our beloved Staff Member, [[${name}]] </h1>
+<h2>Here is your room details !</h2>
+<br>
+<label> Room Number : </label> <p th:text="${room.id}"> </p><br>
+<label> Room Type : </label> <p th:text="${room.roomType}"> </p>
+<label> Room Price : </label> <p th:text="${'FREE'}"> </p>
+
+
+<p> <a href="/" th:href="@{/staff}">Book</a> another room</p>
+<p> <a href="#" th:href="@{/logout}"> Logout</a></p>
+    </div>
+</body>
+</html>

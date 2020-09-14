@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+     <link rel="stylesheet" type="text/css" href="../main.css">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+     <div class="bg-image"></div>
+    
+    <div class="bg-text">
+      <h1> STAFF ROOM BOOKING (FREE!) </h1>
+     
+	<form name="form" action="#" th:action="@{/staff/bookRoom}" method="post"
+		th:object="${room}" >
+	
+		<br> <br>
+		<div>
+			<input type="hidden" name="id" th:field="*{id}" th:value="*{id}" />
+		
+			
+			<div>
+				<label> Select Room Type :  </label><br> 
+				
+	<select  style="border-radius: 10px; "th:field="*{{roomType}}">
+         <option th:each="roomType : ${T(com.prog39599.beans.RoomType).values()}"
+                    th:value="${{roomType}}"
+                    th:selected="${roomType == T(com.prog39599.beans.RoomType)}"
+                    th:text="${roomType}">
+        </option>
+    </select> 	
+			</div>
+			
+			<div>
+				<label> Rooms Remaining for Staff </label><br> 
+				 <label>Luxury</label> <p th:text="${StaffLuxRoomsLeft}"> </p>
+		
+				 <br>
+				 
+				 	 <label>Deluxe</label> <p th:text="${StaffDelRoomsLeft}"> </p>
+				 	
+				 	 <br>
+				 	 
+				 	 	 <label>Economy</label> <p th:text="${StaffEcoRoomsLeft}"> </p>
+
+			</div>
+			<br>
+			<h3> Room Booking for Staff is free of charge !</h3>
+			<br>
+			
+			<div>
+				<input type="submit" value="Book" class="button"  />
+			</div>
+		</div>
+	</form>
+<p> <a href="/" th:href="@{/}"> Back to Home Page</a></p>
+<p> <a href="#" th:href="@{/logout}"> Logout</a></p>
+    </div>
+</body>
+</html>

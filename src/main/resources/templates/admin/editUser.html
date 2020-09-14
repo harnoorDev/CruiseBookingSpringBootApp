@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+    
+<head>
+  <link rel="stylesheet" type="text/css" href="../main.css">
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+     <div class="bg-image"></div>
+    
+    <div class="bg-text">
+<h1> CUSTOMER INFO </h1>
+	<form  method ="post" th:action="@{/modifyCustomer}" th:object="${customer}">
+			
+			<input type="hidden" th:field="*{id}" th:value="*{id}"/>
+			 	<input type="hidden" th:field="*{encryptedPassword}" th:value="*{encryptedPassword}"/>
+			 		<input type="hidden" th:field="*{enabled}" th:value="*{enabled}"/>
+			 		
+			<p> Username : <input type="text" th:field="*{username}" th:value="*{username}" required/></p> 
+			<p> Email : <input type="email" th:field="*{email}" th:value="*{email}" /></p> 
+			<p>Is Senior ?<input type="checkbox" th:field="*{isSenior}" th:value="${isSenior}"  /><br></p>
+			<p> Is with Children ? :<input type="checkbox" th:field="*{isWithChildren}" th:value="${isWithChildren}"  /></p> 
+			<input type="submit" value="Save Changes"  class="button" />
+		</form>
+
+
+</body>
+</html>
